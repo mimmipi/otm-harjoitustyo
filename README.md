@@ -1,8 +1,6 @@
-# OTM harjoitustyö
- 
-**OTM** *harkkatyön* pohja
+# *OTM harjoitustyö*
 
-## Tehtävät
+## **Tehtävät**
 
 ### Viikko 1
 
