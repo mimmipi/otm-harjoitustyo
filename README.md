@@ -1,4 +1,4 @@
-# *OTM harjoitustyö*
+# OTM harjoitustyö
 
 ## **Tehtävät**
 
