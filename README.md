@@ -8,6 +8,8 @@
 
 [gitlog.txt](https://github.com/mimmipi/otm-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
 
+### Viikko 2
+
 [Vaatimusmäärittely](https://github.com/mimmipi/otm-harjoitustyo/blob/master/dokumentointi/Vaatimusmaarittely.txt)
 
 [Työaikakirjanpito](https://github.com/mimmipi/otm-harjoitustyo/blob/master/tyoaikakirjanpito.txt)
