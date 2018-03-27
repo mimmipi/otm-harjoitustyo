@@ -10,6 +10,6 @@
 
 ### Viikko 2
 
-[Vaatimusmäärittely](https://github.com/mimmipi/otm-harjoitustyo/blob/master/dokumentointi/Vaatimusmaarittely.txt)
+[Vaatimusmäärittely](https://github.com/mimmipi/otm-harjoitustyo/blob/master/dokumentointi/Vaatimusmaarittely.md)
 
 [Työaikakirjanpito](https://github.com/mimmipi/otm-harjoitustyo/blob/master/tyoaikakirjanpito.txt)
