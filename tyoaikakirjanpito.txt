@@ -2,3 +2,5 @@ Työaikakirjanpito
 
 viikko 2:
 25.3. 3 h tehtävien lukemiseen ja toisen viikon JUnit laskarien tekemiseen
+
+27.3. 6 h Vaatimusmäärittelydokumenttiin ja toisen viikon laskarien tekemiseen
