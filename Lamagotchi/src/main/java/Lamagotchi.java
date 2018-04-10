@@ -52,6 +52,26 @@ public class Lamagotchi {
     public double getAge() {
         return this.age / 10;
     }
+    
+    public String getName() {
+        return this.name;
+    }
+    
+    public int getEnergy() {
+        return this.energy;
+    }
+    
+    public int getHappiness() {
+        return this.happy;
+    }
+    
+    public int getHunger() {
+        return this.hungry;
+    }
+    
+    public int getDirty() {
+        return this.dirty;
+    }
 
     public String printInformation() {
         return "Lamagotchi: " + this.name + "\nIkä: " + this.getAge() + "\nVirkeys: " + this.energy + "\nOnnellisuus: " + this.happy
