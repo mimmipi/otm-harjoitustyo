@@ -6,4 +6,4 @@
 
 ## Työaikakirjanpito
 
-[Työaikakirjanpito](https://github.com/mimmipi/otm-harjoitustyo/blob/master/tyoaikakirjanpito.txt)
+[Työaikakirjanpito](https://github.com/mimmipi/otm-harjoitustyo/blob/master/dokumentointi/tyoaikakirjanpito.txt)
