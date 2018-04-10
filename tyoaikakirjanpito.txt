@@ -7,3 +7,4 @@ viikko 2:
 
 viikko 3:
 7.4. 3 h Lamagotchin rungon luomiseen
+10.4. 3 h Lamagotchin koodin jatkamiseen ja testien kirjoittamiseen
