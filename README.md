@@ -8,7 +8,7 @@ Sovellus on versio 90-luvun Tamagotchi-hittipelistä. Pelissä pelaaja saa hoide
 
 ## Työaikakirjanpito
 
-[Työaikakirjanpito](https://github.com/mimmipi/otm-harjoitustyo/blob/master/dokumentointi/tyoaikakirjanpito.txt)
+[Työaikakirjanpito](https://github.com/mimmipi/otm-harjoitustyo/blob/master/dokumentointi/tyoaikakirjanpito.md)
 
 
 ## Komentorivitoiminnot
