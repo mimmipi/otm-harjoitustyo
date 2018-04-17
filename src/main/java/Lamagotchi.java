@@ -22,13 +22,13 @@ public class Lamagotchi {
             this.hungry--;
         }
         if (this.happy > 0) {
-        this.happy--;
+            this.happy--;
         }
         if (this.dirty > 0) {
-        this.dirty--;
+            this.dirty--;
         }
         if (this.energy > 0) {
-        this.energy--;
+            this.energy--;
         }
         this.age++;
     }
@@ -52,23 +52,23 @@ public class Lamagotchi {
     public double getAge() {
         return this.age / 10;
     }
-    
+
     public String getName() {
         return this.name;
     }
-    
+
     public int getEnergy() {
         return this.energy;
     }
-    
+
     public int getHappiness() {
         return this.happy;
     }
-    
+
     public int getHunger() {
         return this.hungry;
     }
-    
+
     public int getDirty() {
         return this.dirty;
     }

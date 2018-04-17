@@ -9,3 +9,23 @@ Sovellus on versio 90-luvun Tamagotchi-hittipelistä. Pelissä pelaaja saa hoide
 ## Työaikakirjanpito
 
 [Työaikakirjanpito](https://github.com/mimmipi/otm-harjoitustyo/blob/master/dokumentointi/tyoaikakirjanpito.txt)
+
+
+## Komentorivitoiminnot
+
+### Testaus
+
+Testit suoritetaan komennolla
+
+```
+mvn test
+```
+
+Testikattavuusraportti luodaan komennolla
+
+```
+mvn jacoco:report
+```
+
+Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto _target/site/jacoco/index.html_
+
