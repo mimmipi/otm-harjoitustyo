@@ -1,3 +1,6 @@
+package domain;
+
+import userinterface.UserInterface;
 
 public class Lamagotchi {
 
