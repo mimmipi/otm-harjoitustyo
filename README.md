@@ -19,6 +19,8 @@ Sovellus on versio 90-luvun Tamagotchi-hittipelistä. Pelissä pelaaja saa hoide
 
 * [Viikon 5 release](https://github.com/mimmipi/otmLamagotchi/releases/tag/Viikko5)
 
+* [Viikon 6 release](https://github.com/mimmipi/otmLamagotchi/releases/tag/Viikko6)
+
 
 ## Komentorivitoiminnot
 
