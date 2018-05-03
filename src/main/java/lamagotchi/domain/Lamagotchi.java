@@ -1,7 +1,10 @@
-package domain;
+package lamagotchi.domain;
 
-import userinterface.UserInterface;
-
+import lamagotchi.userinterface.UserInterface;
+/**
+ * Luokka edustaa yhtä instanssia Lamagotchi-hahmosta
+ * @author piikkila
+ */
 public class Lamagotchi {
 
     private String name;
@@ -10,46 +13,35 @@ public class Lamagotchi {
     private int dirty;
     private int happy;
     private int energy;
+    
+    /**
+     * Metodi luo uuden instanssin Lamagotchi-luokasta
+     * @param name Lamagotchi-oliolle annettava nimi
+     */
 
     public Lamagotchi(String name) {
         this.name = name;
         this.age = 0;
-        this.dirty = 10;
-        this.happy = 10;
-        this.hungry = 10;
-        this.energy = 10;
+        this.dirty = 0;
+        this.happy = 3;
+        this.hungry = 0;
+        this.energy = 0;
     }
 
-    public void timePasses() {
-        if (this.hungry > 0) {
-            this.hungry--;
-        }
-        if (this.happy > 0) {
-            this.happy--;
-        }
-        if (this.dirty > 0) {
-            this.dirty--;
-        }
-        if (this.energy > 0) {
-            this.energy--;
-        }
-        this.age++;
+    public void setEnergy(int x) {
+        this.energy = x;
     }
 
-    public void washLama() {
-        this.dirty = 10;
+    public void setDirty(int x) {
+        this.dirty = x;
     }
 
-    public void feedLama() {
-        this.hungry = 10;
+    public void setHungry(int x) {
+        this.hungry = x;
     }
 
-    public void sleepLama() {
-        this.energy = 10;
-    }
-
-    public void playWithLama() {
-        this.happy = 10;
+    public void setHappy(int x) {
+        this.happy = x;
     }
 
     public double getAge() {
@@ -75,13 +67,15 @@ public class Lamagotchi {
     public int getDirty() {
         return this.dirty;
     }
+    
+    /**
+     * Metodi palauttaa Lamagotchi-olion tiedot luettavassa muodossa
+     * @return Lamagotchin tiedot luettavassa muodossa
+     */
 
     public String printInformation() {
         return "Lamagotchi: " + this.name + "\nIkä: " + this.getAge() + "\nVirkeys: " + this.energy + "\nOnnellisuus: " + this.happy
                 + "\nHygienia: " + this.dirty + "\nEnergia: " + this.hungry + "\n";
     }
 
-    public void killLama() {
-
-    }
 }

@@ -22,4 +22,8 @@
 * 24.4. 3 h koodiin
 * Yhteensä viikolla 5: 5 h:
 
-Yhteensä kaikki viikot: 22,5 h.
+## viikko 6:
+
+*2.5. 9 h koodaukseen, pakkausrakenteeseen, JavaDociin ja arkkitehtuurikuvaukseen
+
+Yhteensä kaikki viikot: 31,5 h.

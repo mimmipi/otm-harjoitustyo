@@ -1,5 +1,7 @@
 
-import userinterface.UserInterface;
+
+
+import lamagotchi.userinterface.UserInterface;
 
 public class Main {
 

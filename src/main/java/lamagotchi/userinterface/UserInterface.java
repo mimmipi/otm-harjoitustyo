@@ -1,4 +1,4 @@
-package userinterface;
+package lamagotchi.userinterface;
 
 import javafx.animation.AnimationTimer;
 import javafx.animation.KeyValue;
@@ -18,15 +18,25 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import domain.Lamagotchi;
-
+import lamagotchi.domain.LamagotchiService;
+/**
+ * Luokka vastaa käyttöliittymästä
+ * @author piikkila
+ */
 public class UserInterface extends Application {
 
-    private Lamagotchi activeLama;
+  // private Lamagotchi activeLama;
+    private LamagotchiService activeLama;
+    private Scene gameScene;
+    private Scene loginScene;
+    private Scene newUserScene;
 
     @Override
     public void start(Stage stage) {
-        this.activeLama = new Lamagotchi("Lama");
+        this.activeLama = new LamagotchiService();
+        this.activeLama.createNewLama("Lama");
+        
+        
         stage.setTitle("Lamagotchi");
         Button feed = new Button("Syötä");
         Button sleep = new Button("Nuku");
@@ -42,7 +52,7 @@ public class UserInterface extends Application {
 
         ProgressBar energy = new ProgressBar(0);
         ProgressBar cleanliness = new ProgressBar(0);
-        ProgressBar happiness = new ProgressBar(0);
+        ProgressBar happiness = new ProgressBar(activeLama.getHappiness());
         ProgressBar hunger = new ProgressBar(0);
 
         HBox progressBars = new HBox();
@@ -62,7 +72,7 @@ public class UserInterface extends Application {
         play.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                happiness.setProgress(1);
+                happiness.setProgress(activeLama.getHappiness()+0.5);
                 activeLama.playWithLama();
 
             }
@@ -71,7 +81,7 @@ public class UserInterface extends Application {
         sleep.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                energy.setProgress(1);
+                energy.setProgress(0.5);
                 activeLama.sleepLama();
 
             }
@@ -118,9 +128,9 @@ public class UserInterface extends Application {
         setup.setBottom(buttons);
         setup.setTop(progressBars);
 
-        Scene scene = new Scene(setup);
+        this.gameScene = new Scene(setup);
 
-        stage.setScene(scene);
+        stage.setScene(this.gameScene);
         stage.show();
     }
 
