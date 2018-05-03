@@ -6,9 +6,14 @@ Sovellus on versio 90-luvun Tamagotchi-hittipelistä. Pelissä pelaaja saa hoide
 
 [Vaatimusmäärittely](https://github.com/mimmipi/otm-harjoitustyo/blob/master/dokumentointi/Vaatimusmaarittely.md)
 
-## Työaikakirjanpito
 
 [Työaikakirjanpito](https://github.com/mimmipi/otm-harjoitustyo/blob/master/dokumentointi/tyoaikakirjanpito.md)
+
+
+[Käyttöohje](https://github.com/mimmipi/otmLamagotchi/blob/master/dokumentointi/kayttoohje.md)
+
+
+[Arkkitehtuurikuvaus](https://github.com/mimmipi/otmLamagotchi/blob/master/dokumentointi/arkkitehtuuri.md)
 
 ## Release
 
