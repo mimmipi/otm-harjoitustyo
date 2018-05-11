@@ -1,6 +1,5 @@
 package lamagotchi.domain;
 
-import lamagotchi.dao.LamagotchiDao;
 import lamagotchi.dao.UserDao;
 
 /**
@@ -9,21 +8,56 @@ import lamagotchi.dao.UserDao;
  * @author piikkila
  */
 public class LamagotchiService {
-    
+
     private Lamagotchi lama;
     private UserDao userdao;
-    private LamagotchiDao lamaDao;
-    
-    public LamagotchiService(LamagotchiDao lamaDao, UserDao userDao) {
-        this.lamaDao = lamaDao;
+    private User loggedIn;
+
+    /**
+     * Konstruktori luo uuden instanssin luokasta ja alustaa uudet Daot, joiden
+     * avulla tiedot tallennetaan
+     *
+     * @param lamaDao tallettaa Lamagotchit
+     * @param userDao tallettaa käyttäjätiedot
+     */
+    public LamagotchiService(UserDao userDao) {
+
         this.userdao = userDao;
-        
     }
-    
+
+    /**
+     * Metodi kirjaa käyttäjän sisään ja palauttaa true jos kirjautuminen
+     * onnistuu
+     */
+    public boolean login(String name, String password) {
+        User user = userdao.findByName(name);
+        if (user == null) {
+            return false;
+        } else if (!user.getPassword().equals(password)) {
+            return false;
+        }
+        loggedIn = user;
+        return true;
+    }
+
+    public User getLoggedUser() {
+        return loggedIn;
+    }
+
+    /**
+     * Metodi palauttaa Lamagotchin nimen
+     *
+     * @return Lamagotchin nimi
+     */
     public String getName() {
         return this.lama.getName();
     }
-    
+
+    /**
+     * Metodi palauttaa Lamagotchin iän
+     *
+     * @return Lamagotchin ikä
+     */
     public double getAge() {
         return this.lama.getAge();
     }
@@ -32,27 +66,31 @@ public class LamagotchiService {
      * Metodi luo uuden Lamagotchi-olion
      */
     public void createNewLama(String name) {
-        this.lama = new Lamagotchi(name);
-        
+        this.lama = new Lamagotchi(name, loggedIn);
+
     }
-    
+
+    /**
+     * Metodi kuluttaa pelin aikaa eli vähentää onnellisuutta, puhtautta,
+     * energisyyttä ja nälkää sekä vanhentaa Lamagotchia.
+     */
     public void timePasses() {
         if (this.lama.getHappiness() > 0.0001) {
             this.lama.setHappy(this.lama.getHappiness() - 0.0001);
         }
-        
+
         if (this.lama.getDirty() > 0.0001) {
-            this.lama.setDirty(this.lama.getDirty() - 0.00005);
+            this.lama.setDirty(this.lama.getDirty() - 0.0005);
         }
-        
+
         if (this.lama.getEnergy() > 0.0001) {
-            this.lama.setEnergy(this.lama.getEnergy() - 0.00001);
+            this.lama.setEnergy(this.lama.getEnergy() - 0.0001);
         }
-        
+
         if (this.lama.getHunger() > 0.0001) {
             this.lama.setHunger(this.lama.getHunger() - 0.0001);
         }
-        
+
         this.lama.setAge(this.lama.getAge() + 0.001);
     }
 
@@ -87,7 +125,7 @@ public class LamagotchiService {
         } else {
             this.lama.setEnergy(1);
         }
-        
+
     }
 
     /**
@@ -99,7 +137,7 @@ public class LamagotchiService {
         } else {
             this.lama.setHappy(1);
         }
-        
+
     }
 
     /**
@@ -110,27 +148,46 @@ public class LamagotchiService {
     public double getHappiness() {
         return this.lama.getHappiness();
     }
-    
+
+    /**
+     * Metodi palauttaa Lamagotchin kylläisyyden
+     *
+     * @return Lamagotchin kylläisyys
+     */
     public double getHunger() {
         return this.lama.getHunger();
     }
-    
+
+    /**
+     * Metodi palauttaa Lamagotchin puhtauden
+     *
+     * @return Lamagotchin puhtaus
+     */
     public double getDirty() {
         return this.lama.getDirty();
     }
-    
+
+    /**
+     * Metodi palauttaa Lamagotchin energisyyden
+     *
+     * @return Lamagotchin energisyys
+     */
     public double getEnergy() {
         return this.lama.getEnergy();
     }
-    
-    public boolean login(String username) {
-        return true;
-    }
-    
+
+    /**
+     * Metodi luo uuden käyttäjän peliin
+     *
+     * @param käyttäjänimi
+     * @param salasana
+     * @return palauttaa true jos käyttäjän luonti onnistuu, false jos
+     * epäonnistuu
+     */
     public boolean createNewUser(String name, String password) {
         if (userdao.findByName(name) != null) {
             return false;
-        }        
+        }
         User user = new User(name, password);
         userdao.create(user);
         return true;

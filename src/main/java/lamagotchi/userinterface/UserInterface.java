@@ -26,9 +26,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import lamagotchi.dao.FileLamagotchiDao;
 import lamagotchi.dao.FileUserDao;
-import lamagotchi.dao.LamagotchiDao;
 import lamagotchi.domain.LamagotchiService;
 
 /**
@@ -45,6 +43,7 @@ public class UserInterface extends Application {
     private Scene newUserScene;
     private Scene endScene;
     private Scene newLamagotchiScene;
+    private double ageOfDeath;
 
     private Label menuLabel = new Label();
 
@@ -54,11 +53,9 @@ public class UserInterface extends Application {
         properties.load(new FileInputStream("config.properties"));
 
         String userFile = properties.getProperty("userFile");
-        String LamagotchiFile = properties.getProperty("lamasFile");
 
         FileUserDao userDao = new FileUserDao(userFile);
-        FileLamagotchiDao lamaDao = new FileLamagotchiDao(LamagotchiFile, userDao);
-        this.activeLama = new LamagotchiService(lamaDao, userDao);
+        this.activeLama = new LamagotchiService(userDao);
         this.activeLama.createNewLama("Lama");
 
     }
@@ -84,14 +81,17 @@ public class UserInterface extends Application {
         Button loginButton = new Button("login");
         Button createButton = new Button("new user");
         loginButton.setOnAction(e -> {
-            String username = usernameInput.getText();
-            menuLabel.setText(username + " logged in...");
-            if (activeLama.login(username)) {
+            String name = usernameInput.getText();
+            String pw = passwordInput.getText();
+            menuLabel.setText(name + " logged in...");
+
+            if (activeLama.login(name, pw)) {
                 loginMessage.setText("");
                 stage.setScene(gameScene);
                 usernameInput.setText("");
+                passwordInput.setText("");
             } else {
-                loginMessage.setText("user not found");
+                loginMessage.setText("user or password wrong");
             }
         });
 
@@ -132,9 +132,11 @@ public class UserInterface extends Application {
                 userCreationMessage.setText("  name too short");
                 userCreationMessage.setTextFill(Color.RED);
             } else if (activeLama.createNewUser(name, pw)) {
-                userCreationMessage.setText("xxx");
+                userCreationMessage.setText("new user created!");
                 loginMessage.setText("new user created");
                 loginMessage.setTextFill(Color.GREEN);
+                newUsernameInput.setText("");
+                newPasswordInput.setText("");
                 stage.setScene(loginScene);
             } else {
                 userCreationMessage.setText("username has to be unique");
@@ -144,27 +146,9 @@ public class UserInterface extends Application {
         });
 
         newUserPane.getChildren().addAll(userCreationMessage, newUsernamePane, newpasswordPane, createNewUserButton);
-        newUserScene = new Scene(newUserPane, 300, 250);
-        
-        // end scene
-        Label endMessage = new Label("Lamagotchisi menehtyi. Onnistuit kasvattamaan sen " + activeLama.getAge() + "-vuotiaaksi.");
-        endMessage.setPadding(new Insets(50));
-        
-        Button newGame = new Button("Uusi peli?");
-        newGame.setPadding(new Insets(15));
-        
-        VBox endBox = new VBox(10);
-        endBox.getChildren().addAll(endMessage, newGame);
-        this.endScene = new Scene(endBox);
-        
-        // new Lamagotchi scene
-        
-        TextField newLamaName = new TextField();
-        
-        
-        
-        //this.newLamagotchiScene = new Scene();
-        
+        newUserScene = new Scene(newUserPane, 300, 300);
+
+
         // game scene 
         stage.setTitle("Lamagotchi");
         Button feed = new Button("Syötä");
@@ -263,18 +247,20 @@ public class UserInterface extends Application {
                 ageLabel.setText(Double.toString((int) activeLama.getAge()));
 
                 if (activeLama.getHappiness() < 0.01) {
-                    lamasThoughts.setText("Onpa tylsää :(.\nLeikitäänkö?");
-                } else if (activeLama.getHunger() < 0.5) {
+                    lamasThoughts.setText("Onpa tylsää :(. Leikitäänkö?");
+                } else if (activeLama.getHunger() < 0.5 && activeLama.getHunger() > 0.2) {
                     lamasThoughts.setText("Nälkä! Anna ruokaa!");
+                } else if (activeLama.getHunger() < 0.2) {
+                    lamasThoughts.setText("Kuolen pian nälkään ;__;");
                 } else if (activeLama.getEnergy() < 0.2) {
                     lamasThoughts.setText("Väsyttää, voisin nukkua vuoden...");
                 } else if (activeLama.getDirty() < 0.1) {
-                    lamasThoughts.setText("Täällä haisee.\nOlenko se minä?");
+                    lamasThoughts.setText("Täällä haisee. Olenko se minä?");
                 } else {
                     lamasThoughts.setText("");
                 }
-                
-                if (activeLama.getHunger()<0.001) {
+
+                if (activeLama.getHunger() < 0.001) {
                     
                     stage.setScene(endScene);
                 }
@@ -284,15 +270,22 @@ public class UserInterface extends Application {
 
         VBox centerPane = new VBox(10);
         centerPane.setPadding(new Insets(10));
-        centerPane.getChildren().addAll(canvas, nameLabel, ageLabel);
+        centerPane.getChildren().addAll(canvas, lamasThoughts, nameLabel, ageLabel);
 
         BorderPane setup = new BorderPane();
         setup.setCenter(centerPane);
         setup.setBottom(buttons);
         setup.setTop(progressBars);
-        setup.setRight(lamasThoughts);
 
         this.gameScene = new Scene(setup);
+
+        // end scene
+
+        VBox endBox = new VBox(10);
+        Label endMessage = new Label("Lamagotchisi menehtyi. Pidä siitä parempaa huolta ensi kerralla!");
+        endMessage.setPadding(new Insets(50));
+        endBox.getChildren().add(endMessage);
+        this.endScene = new Scene(endBox);
 
         stage.setScene(loginScene);
 

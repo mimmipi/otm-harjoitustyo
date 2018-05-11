@@ -1,4 +1,4 @@
-# Työaikakirjanpit
+# Työaikakirjanpito
 
 ## viikko 2:
 
@@ -24,6 +24,13 @@
 
 ## viikko 6:
 
-*2.5. 9 h koodaukseen, pakkausrakenteeseen, JavaDociin ja arkkitehtuurikuvaukseen
+* 2.5. 9 h koodaukseen, pakkausrakenteeseen, JavaDociin ja arkkitehtuurikuvaukseen
 
-Yhteensä kaikki viikot: 31,5 h.
+## viikko 7:
+
+* 8.5. 4,5 h dao:n opetteluun ja UI:hin
+* 9.5. 2 h UserInterfacen valmisteluun
+* 10.5. 6 h UserInterfaceen, LamagotchiServiceen ja tallennusjärjestelmään
+* 11.5.
+
+Yhteensä kaikki viikot: 44 h.

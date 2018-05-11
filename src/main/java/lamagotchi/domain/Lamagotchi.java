@@ -15,19 +15,34 @@ public class Lamagotchi {
     private double dirty;
     private double happy;
     private double energy;
+    private int id;
+    private User user;
 
     /**
      * Metodi luo uuden instanssin Lamagotchi-luokasta
      *
      * @param name Lamagotchi-oliolle annettava nimi
      */
-    public Lamagotchi(String name) {
+    public Lamagotchi(String name, User user) {
         this.name = name;
         this.age = 0;
         this.dirty = 1;
         this.happy = 1;
         this.hungry = 1;
         this.energy = 1;
+        this.user = user;
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public User getUser() {
+        return this.user;
     }
 
     public void setEnergy(double x) {
@@ -49,7 +64,7 @@ public class Lamagotchi {
     public double getAge() {
         return this.age;
     }
-    
+
     public void setAge(double x) {
         this.age = x;
     }
@@ -81,7 +96,7 @@ public class Lamagotchi {
      */
     public String printInformation() {
         return "Lamagotchi: " + this.name + "\nIkä: " + this.getAge() + "\nVirkeys: " + this.energy + "\nOnnellisuus: " + this.happy
-                + "\nHygienia: " + this.dirty + "\nEnergia: " + this.hungry + "\n";
+                + "\nHygienia: " + this.dirty + "\nKylläisyys: " + this.hungry + "\n";
     }
 
 }
