@@ -77,7 +77,7 @@ Kirjautumiskenttään on syötekenttään kirjoitettu käyttäjätunnus ja salas
 
 #### Ajan kuluminen
 
-<img src="https://github.com/mimmipi/otmLamagotchi/blob/master/dokumentointi/kuvat/Untitled(2).png" width="500">
+<img src="https://github.com/mimmipi/otmLamagotchi/blob/master/dokumentointi/kuvat/Untitled(2).png" width="800">
 
 ## Ohjelman rakenteeseen jääneet heikkoudet
 
