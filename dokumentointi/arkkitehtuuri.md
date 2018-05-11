@@ -69,11 +69,11 @@ Sovellus talletta käyttäjät formaatissa nimi;salasana, eli ensin käyttäjän
 
 Kirjautumiskenttään on syötekenttään kirjoitettu käyttäjätunnus ja salasana salasanakenttään ja klikataan painiketta loginButton, etennee sovelluksen kontrolli näin:
 
-<img src="https://github.com/mimmipi/otmLamagotchi/blob/master/dokumentointi/kuvat/Untitled.png" width="500">
+<img src="https://github.com/mimmipi/otmLamagotchi/blob/master/dokumentointi/kuvat/Untitled.png" width="800">
 
 #### Lamagotchin syöttäminen
 
-<img src="https://github.com/mimmipi/otmLamagotchi/blob/master/dokumentointi/kuvat/Untitled(1).png" width="500">
+<img src="https://github.com/mimmipi/otmLamagotchi/blob/master/dokumentointi/kuvat/Untitled(1).png" width="800">
 
 #### Ajan kuluminen
 
