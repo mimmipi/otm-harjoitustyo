@@ -20,7 +20,6 @@
 
 * 23.4. 2 h koodiin
 * 24.4. 3 h koodiin
-* Yhteensä viikolla 5: 5 h:
 
 ## viikko 6:
 
@@ -31,6 +30,6 @@
 * 8.5. 4,5 h dao:n opetteluun ja UI:hin
 * 9.5. 2 h UserInterfacen valmisteluun
 * 10.5. 6 h UserInterfaceen, LamagotchiServiceen ja tallennusjärjestelmään
-* 11.5.
+* 11.5. 8 h koodaamiseen, JUnit-testeihin, dokumentointiin, kaiken viimeistelyyn
 
-Yhteensä kaikki viikot: 44 h.
+Yhteensä kaikki viikot: 52 h.
