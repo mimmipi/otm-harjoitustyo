@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 import lamagotchi.dao.FileUserDao;
 import lamagotchi.dao.UserDao;
@@ -128,8 +123,8 @@ public class LamagotchiServiceTest {
         cleanliness = (int) this.lama.getDirty();
         assertEquals(1, cleanliness);
     }
-    
-    @Test 
+
+    @Test
     public void creatingNewUserWorks() {
         User user = new User("John", "fishes");
         this.lama.createNewUser("John", "fishes");

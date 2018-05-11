@@ -43,10 +43,14 @@ public class UserInterface extends Application {
     private Scene newUserScene;
     private Scene endScene;
     private Scene newLamagotchiScene;
-    private double ageOfDeath;
 
     private Label menuLabel = new Label();
 
+    /**
+     * Metodi alustaa käyttöliittymäluokan luomalla sen käyttämiä olioita
+     *
+     * @throws Exception
+     */
     @Override
     public void init() throws Exception {
         Properties properties = new Properties();
@@ -60,6 +64,12 @@ public class UserInterface extends Application {
 
     }
 
+    /**
+     * Metodi toimii pääkäyttöliittymänä, jossa kirjaudutaan sisään, luodaan
+     * uusi käyttäjä ja hallinnoidaan peliä
+     *
+     * @param stage
+     */
     @Override
     public void start(Stage stage) {
 
@@ -147,7 +157,6 @@ public class UserInterface extends Application {
 
         newUserPane.getChildren().addAll(userCreationMessage, newUsernamePane, newpasswordPane, createNewUserButton);
         newUserScene = new Scene(newUserPane, 300, 300);
-
 
         // game scene 
         stage.setTitle("Lamagotchi");
@@ -261,7 +270,7 @@ public class UserInterface extends Application {
                 }
 
                 if (activeLama.getHunger() < 0.001) {
-                    
+
                     stage.setScene(endScene);
                 }
             }
@@ -280,7 +289,6 @@ public class UserInterface extends Application {
         this.gameScene = new Scene(setup);
 
         // end scene
-
         VBox endBox = new VBox(10);
         Label endMessage = new Label("Lamagotchisi menehtyi. Pidä siitä parempaa huolta ensi kerralla!");
         endMessage.setPadding(new Insets(50));
@@ -292,6 +300,9 @@ public class UserInterface extends Application {
         stage.show();
     }
 
+    /**
+     * Metodi toimii pelianimaation taustametodina
+     */
     public class AnimatedImage {
 
         public Image[] frames;
@@ -303,6 +314,11 @@ public class UserInterface extends Application {
         }
     }
 
+    /**
+     * Ohjelman käynnistävä main-metodi
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         launch(args);
     }

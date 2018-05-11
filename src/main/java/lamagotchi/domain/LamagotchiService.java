@@ -40,6 +40,11 @@ public class LamagotchiService {
         return true;
     }
 
+    /**
+     * Metodi palauttaa parhaillaan kirjautuneena olevan käyttäjän
+     *
+     * @return
+     */
     public User getLoggedUser() {
         return loggedIn;
     }
@@ -80,15 +85,15 @@ public class LamagotchiService {
         }
 
         if (this.lama.getDirty() > 0.0001) {
-            this.lama.setDirty(this.lama.getDirty() - 0.0005);
+            this.lama.setDirty(this.lama.getDirty() - 0.00005);
         }
 
         if (this.lama.getEnergy() > 0.0001) {
-            this.lama.setEnergy(this.lama.getEnergy() - 0.0001);
+            this.lama.setEnergy(this.lama.getEnergy() - 0.00001);
         }
 
         if (this.lama.getHunger() > 0.0001) {
-            this.lama.setHunger(this.lama.getHunger() - 0.0001);
+            this.lama.setHunger(this.lama.getHunger() - 0.00001);
         }
 
         this.lama.setAge(this.lama.getAge() + 0.001);
