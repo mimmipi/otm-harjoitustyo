@@ -81,12 +81,12 @@ Kirjautumiskenttään on syötekenttään kirjoitettu käyttäjätunnus ja salas
 
 ## Ohjelman rakenteeseen jääneet heikkoudet
 
-### Käyttöliittymä
-
 Käyttöliittymän ulkoasu jäi valitettavasti ajanpuutteen vuoksi hyvin alkeelliseksi, sillä päätin panostaa rajallisen ajan mieluummin toiminnallisuuden valmiiksi saamiseen kuin visuaalisesti miellyttävän ohjelman tuottamiseen.
+
 Ajanpuutteen vuoksi myös pelilogiikka on yksinkertaisempi kuin oli ajatuksena alunperin, eikä palautus ole varsinaisesti kovin pelillinen. 
+
 Kaikki näkymät luodaan tällä hetkellä samassa metodissa start, mikä olisi syytä korjata ja etenkin päänäkymät luovat koodit erotella omiksi metodeikseen. 
 
-### DAO-luokat
-
 Tarkoitus oli rakentaa myös Lamagotchit tallentava oma dao-luokka Lamagotchi-olioita tallentavalle tiedostolle, mutta ajanpuutteen vuoksi koodi jäi kesken ja luokka piti karsia loppupalautuksesta. 
+
+Salasanan tallennus on toteutettu sellaisella tavalla jota ei koskaan todellisessa ohjelmassa voisi sallia. Kunnollinen talletusmuoto salasanalle olisi seuraavana kehityskohteena.
