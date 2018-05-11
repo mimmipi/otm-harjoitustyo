@@ -4,6 +4,8 @@
 
 Ohjelman rakenne noudattelee kolmitasoista kerrosarkkitehtuuria, ja koodin pakkausrakenne on seuraava:
 
+<img src="https://raw.githubusercontent.com/mimmipi/otmLamagotchi/blob/master/dokumentointi/kuvat/Untitled%20Diagram.png" width="160">
+
 * userinterface
 * domain
 * DAO
