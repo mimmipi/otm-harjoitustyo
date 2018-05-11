@@ -1,4 +1,4 @@
-package lamagotchi.DAO;
+package lamagotchi.dao;
 
 import lamagotchi.domain.User;
 import java.io.File;
@@ -8,8 +8,10 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 /**
  * Luokka tallentaa käyttäjien tiedot tiedostoon ja hakee niitä tiedostosta
+ *
  * @author piikkila
  */
 public class FileUserDao implements UserDao {
@@ -17,19 +19,21 @@ public class FileUserDao implements UserDao {
     private List<User> users;
     private String file;
 
-    public FileUserDao(String file) throws Exception {
+    public FileUserDao(String file)  {
         this.users = new ArrayList<>();
         this.file = file;
+        load();
+    }  
+        private void load() {
         try {
             Scanner reader = new Scanner(new File(file));
             while (reader.hasNextLine()) {
                 String[] parts = reader.nextLine().split(";");
-                User u = new User(parts[0], parts[1]);
-                users.add(u);
+                User user = new User(parts[0], parts[1]);
+                users.add(user);
             }
         } catch (Exception e) {
-            FileWriter writer = new FileWriter(new File(file));
-            writer.close();
+            e.printStackTrace();
         }
     }
 

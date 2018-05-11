@@ -3,12 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lamagotchi.DAO;
+package lamagotchi.dao;
 
 /**
  *
  * @author piikkila
  */
-public interface LamagotchiDao {
-    
+public class FileLamagotchiDao implements LamagotchiDao {
+
+    public FileLamagotchiDao(String LamagotchiFile, FileUserDao userDao) {
+
+    }
+
 }
