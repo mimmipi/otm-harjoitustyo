@@ -14,10 +14,9 @@ Pakkaus _lamagotchi.userinterface_ sisältää JavaFX:llä toteutetun käyttöli
 
 ## Käyttöliittymä
 
-Käyttöliittymä sisältää viisi erilaista näkymää
+Käyttöliittymä sisältää neljä erilaista näkymää
 * kirjautuminen
 * uuden käyttäjän luominen
-* uuden Lamagotchin luominen
 * pelinäkymä
 * pelin loppu
 
@@ -50,6 +49,7 @@ LamagotchiService pääsee käsiksi tallennettuihin käyttäjätietoihin tallenn
 LamagotchiServicen ja ohjelman muiden osien suhdetta kuvaava luokka/pakkauskaavio:
 
 
+<img src="https://github.com/mimmipi/otmLamagotchi/blob/master/dokumentointi/kuvat/relations.png" width="300">
 
 ## Tietojen pysyväistallennus
 
