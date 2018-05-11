@@ -36,13 +36,12 @@ import lamagotchi.domain.LamagotchiService;
  */
 public class UserInterface extends Application {
 
-    // private Lamagotchi activeLama;
     private LamagotchiService activeLama;
     private Scene gameScene;
     private Scene loginScene;
     private Scene newUserScene;
     private Scene endScene;
-    private Scene newLamagotchiScene;
+ 
 
     private Label menuLabel = new Label();
 

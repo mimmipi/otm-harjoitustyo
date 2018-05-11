@@ -1,3 +1,5 @@
+package domain;
+
 
 import lamagotchi.domain.Lamagotchi;
 import lamagotchi.domain.User;

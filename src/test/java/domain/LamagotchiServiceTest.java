@@ -1,3 +1,5 @@
+package domain;
+
 
 import lamagotchi.dao.FileUserDao;
 import lamagotchi.dao.UserDao;

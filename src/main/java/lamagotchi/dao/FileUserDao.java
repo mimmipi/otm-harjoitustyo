@@ -19,12 +19,13 @@ public class FileUserDao implements UserDao {
     private List<User> users;
     private String file;
 
-    public FileUserDao(String file)  {
+    public FileUserDao(String file) {
         this.users = new ArrayList<>();
         this.file = file;
         load();
-    }  
-        private void load() {
+    }
+
+    private void load() {
         try {
             Scanner reader = new Scanner(new File(file));
             while (reader.hasNextLine()) {
